@@ -8,24 +8,24 @@ resource "mongodbatlas_project_ip_whitelist" "testwhitelist" {
 
     whitelist {
       cidr_block = "1.2.3.4/32"
-      comment    = "cidr block for tf acc testing"
+      comment    = "cidr block for tf workshop"
     }
     whitelist {
       ip_address = "2.3.4.5"
-      comment    = "ip address for tf acc testing"
+      comment    = "ip address for tf workshop"
     }
     whitelist {
       cidr_block = "3.4.5.6/32"
-      comment    = "cidr block for tf acc testing"
+      comment    = "cidr block for tf workshop"
     }
     whitelist {
       ip_address = "4.5.6.7"
-      comment    = "ip address for tf acc testing"
+      comment    = "ip address for tf workshop"
     }
  }
   resource "mongodbatlas_database_user" "testuser" {
-    username      = "test-acc-username"
-    password      = "test-acc-password"
+    username      = "TestUser"
+    password      = "Terraformrules"
     project_id    = "5cb8c4e2cf09a2bc9afd0662"
     database_name = "admin"
 
@@ -42,7 +42,7 @@ resource "mongodbatlas_network_container" "testcontainer" {
   }
 resource "mongodbatlas_cluster" "testclusterM30" {
   project_id   = "5cb8c4e2cf09a2bc9afd0662"
-  name         = "test1"
+  name         = "TerraformCluster0"
   num_shards   = 1
 
   replication_factor           = 3
@@ -61,7 +61,7 @@ resource "mongodbatlas_cluster" "testclusterM30" {
 }
 resource "mongodbatlas_cluster" "testclusterM10" {
   project_id   = "5cb8c4e2cf09a2bc9afd0662"
-  name         = "test2"
+  name         = "TerraformCluster1"
   num_shards   = 1
 
   replication_factor           = 3
@@ -76,5 +76,5 @@ resource "mongodbatlas_cluster" "testclusterM10" {
   provider_volume_type        = "STANDARD"
   provider_encrypt_ebs_volume = true
   provider_instance_size_name = "M10"
-  provider_region_name        = "US_EAST_1"
+  provider_region_name        = "US_WEST_1"
 }
