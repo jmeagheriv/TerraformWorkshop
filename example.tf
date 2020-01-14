@@ -3,7 +3,7 @@ provider "mongodbatlas" {
   public_key = "PublicKey" #required
   private_key  = "PrivateKey" #required
 }
-resource "mongodbatlas_cluster" "test" {
+resource "mongodbatlas_cluster" "test2" {
   project_id   = "ProjectID"
   name         = "cluster-test"
   num_shards   = 1
@@ -26,7 +26,7 @@ resource "mongodbatlas_network_container" "test" {
     atlas_cidr_block = "10.8.0.0/21"
     provider_name    = "AWS"
   }
-rresource "mongodbatlas_project_ip_whitelist" "test" {
+resource "mongodbatlas_project_ip_whitelist" "test" {
     project_id = "ProjectID"
 
     whitelist {
@@ -46,3 +46,4 @@ rresource "mongodbatlas_project_ip_whitelist" "test" {
       comment    = "ip address for tf acc testing"
     }
  }
+
