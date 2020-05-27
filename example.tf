@@ -19,7 +19,7 @@ resource "mongodbatlas_cluster" "test2" {
   provider_volume_type        = "STANDARD"
   provider_encrypt_ebs_volume = true
   provider_instance_size_name = "M40"
-  provider_region_name        = "US_EAST_1"
+  provider_region_name        = "US-EAST-1"
 }
 resource "mongodbatlas_network_container" "test" {
     project_id       = "ProjectID"
