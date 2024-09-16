@@ -4,7 +4,7 @@ provider "mongodbatlas" {
 }
 
 resource "mongodbatlas_project_ip_whitelist" "testwhitelist" {
-    project_id = "5cb8c4e2cf09a2bc9afd0662"
+    project_id = var.projectid
 
     whitelist {
       cidr_block = "1.2.3.4/32"
