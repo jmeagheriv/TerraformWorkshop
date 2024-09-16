@@ -26,7 +26,7 @@ resource "mongodbatlas_project_ip_whitelist" "testwhitelist" {
   resource "mongodbatlas_database_user" "testuser" {
     username      = "TestUser"
     password      = "Terraformrules"
-    project_id    = "5cb8c4e2cf09a2bc9afd0662"
+    project_id    = var.projectid
     database_name = "admin"
 
     roles {
@@ -35,7 +35,7 @@ resource "mongodbatlas_project_ip_whitelist" "testwhitelist" {
     }
 }
 resource "mongodbatlas_network_container" "testcontainer" {
-    project_id       = "5cb8c4e2cf09a2bc9afd0662"
+    project_id       = var.projectid
     atlas_cidr_block = "10.8.0.0/21"
     provider_name    = "AWS"
     region_name      = "US_EAST_1"
