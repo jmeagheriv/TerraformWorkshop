@@ -41,7 +41,7 @@ resource "mongodbatlas_network_container" "testcontainer" {
     region_name      = "US_EAST_1"
   }
 resource "mongodbatlas_cluster" "testclusterM30" {
-  project_id   = "5cb8c4e2cf09a2bc9afd0662"
+  project_id   = var.projectid
   name         = "TerraformCluster0"
   num_shards   = 1
 
@@ -60,7 +60,7 @@ resource "mongodbatlas_cluster" "testclusterM30" {
   provider_region_name        = "US_EAST_1"
 }
 resource "mongodbatlas_cluster" "testclusterM10" {
-  project_id   = "5cb8c4e2cf09a2bc9afd0662"
+  project_id   = var.projectid
   name         = "TerraformCluster1"
   num_shards   = 1
 
